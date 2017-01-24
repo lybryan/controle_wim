@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel='stylesheet' type='text/css' href='./css/style.css'>
+	</head>
+	<body>
+		<img width="512" height="663" id="compteur" />
+		<script language="JavaScript" type="text/javascript">
+			 // Un tableau qui va contenir toutes tes images.;
+			var images = new Array();
+			images.push("0.jpg");
+			images.push("1.jpg");
+			images.push("2.jpg");
+			images.push("3.jpg");
+			images.push("4.jpg");
+			images.push("5.jpg");
+			images.push("6.jpg");
+			images.push("7.jpg");
+			images.push("8.jpg");
+			images.push("9.jpg");
+			var pointeur = 0;
+			 function ChangerImage(){
+				document.getElementById("compteur").src = images[pointeur];
+				 if(pointeur < images.length - 1){
+					pointeur++;
+				}
+				else{
+					pointeur = 0;
+				}
+				 setTimeout("ChangerImage()", 1000)
+			}
+			 // Charge la fonction;
+			window.onload = function(){
+				ChangerImage();
+			}
+		</script>
+	</body>
+</html>
